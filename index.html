@@ -433,6 +433,33 @@
         .fab:hover {
             transform: scale(1.1);
         }
+        
+        /* School Logo Styling */
+        .school-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        
+        .school-logo-small {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+        
+        .school-logo-print {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+        }
+        
+        @media print {
+            .school-logo, .school-logo-print, .school-logo-small {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
     </style>
 </head>
 <body class="font-medium theme-blue">
@@ -441,9 +468,7 @@
     <div class="header-bar sticky top-0 z-50 no-print">
         <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
-                    <i class="fas fa-graduation-cap text-green-600 text-xl"></i>
-                </div>
+                <img src="school-logo.png" alt="Logo" class="w-12 h-12 rounded-full shadow-lg bg-white p-1 object-contain">
                 <div>
                     <h1 class="text-white font-black text-xl leading-tight" style="text-shadow: 2px 2px 6px rgba(0,0,0,0.5); letter-spacing: 2px; text-transform: uppercase;">AL-HUDA ISLAMIC EDUCATIONAL SOCIETY</h1>
                 </div>
@@ -487,15 +512,24 @@
                 <p class="text-gray-500 text-sm mt-1">Fill in the student details below</p>
             </div>
             
-            <!-- School Info (Fixed - Read Only) -->
+            <!-- School Info (Fixed - Read Only) with Logo -->
             <div class="input-section bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-500 shadow-md">
-                <div class="text-center py-4">
-                    <h3 class="text-3xl font-black text-green-800 tracking-wider" style="font-family: 'Poppins', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.15); text-transform: uppercase;">
-                        AL-HUDA ISLAMIC EDUCATIONAL SOCIETY
-                    </h3>
-                    <div class="w-32 h-1 bg-gradient-to-r from-green-400 to-emerald-500 mx-auto mt-2 rounded-full"></div>
-                    <p class="text-sm text-green-700 font-semibold mt-2">Nursery TO CLASS - IV</p>
-                    <p class="text-xs text-gray-600 mt-1">Madanpur (Play Ground), Madhyamgram, North 24 Parganas, Kolkata - 700128</p>
+                <div class="flex items-center justify-center gap-4 py-4">
+                    <!-- Left Logo -->
+                    <img src="school-logo.png" alt="School Logo" class="school-logo shadow-md">
+                    
+                    <!-- School Name - Center -->
+                    <div class="text-center flex-1">
+                        <h3 class="text-2xl font-black text-green-800 tracking-wider" style="font-family: 'Poppins', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.15); text-transform: uppercase;">
+                            AL-HUDA ISLAMIC EDUCATIONAL SOCIETY
+                        </h3>
+                        <div class="w-32 h-1 bg-gradient-to-r from-green-400 to-emerald-500 mx-auto mt-2 rounded-full"></div>
+                        <p class="text-sm text-green-700 font-semibold mt-2">Nursery TO CLASS - IV</p>
+                        <p class="text-xs text-gray-600 mt-1">Madanpur (Play Ground), Madhyamgram, North 24 Parganas, Kolkata - 700128</p>
+                    </div>
+                    
+                    <!-- Right Logo -->
+                    <img src="school-logo.png" alt="School Logo" class="school-logo shadow-md">
                 </div>
                 <input type="hidden" id="school" value="AL - HUDA ISLAMIC EDUCATIONAL SOCIETY">
             </div>
@@ -669,19 +703,29 @@
                 <!-- ============ MAIN COPY ============ -->
                 <div class="flex-1">
                     
-                    <!-- Header with Border -->
-                    <div class="border-2 border-green-600 rounded-lg p-4 mb-3 text-center bg-white">
-                        <!-- School Name - Big & Stylish -->
-                        <h1 style="font-size: 28px; font-weight: 900; color: #166534; font-family: 'Poppins', sans-serif; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.15); text-transform: uppercase;">
-                            AL-HUDA ISLAMIC EDUCATIONAL SOCIETY
-                        </h1>
+                    <!-- Header with Border and Logo -->
+                    <div class="border-2 border-green-600 rounded-lg p-4 mb-3 bg-white">
+                        <div class="flex items-center justify-center gap-4">
+                            <!-- Left Logo -->
+                            <img src="school-logo.png" alt="School Logo" class="school-logo-print">
+                            
+                            <!-- School Name - Center -->
+                            <div class="text-center flex-1">
+                                <h1 style="font-size: 26px; font-weight: 900; color: #166534; font-family: 'Poppins', sans-serif; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.15); text-transform: uppercase;">
+                                    AL-HUDA ISLAMIC EDUCATIONAL SOCIETY
+                                </h1>
+                                
+                                <div style="width: 120px; height: 3px; background: linear-gradient(90deg, #22c55e, #10b981); margin: 6px auto; border-radius: 2px;"></div>
+                                
+                                <p class="text-sm text-green-700 font-semibold">Nursery TO CLASS - IV</p>
+                                <p class="text-xs text-gray-600 mt-1">Madanpur (Play Ground), Madhyamgram, North 24 Parganas, Kolkata - 700128</p>
+                            </div>
+                            
+                            <!-- Right Logo -->
+                            <img src="school-logo.png" alt="School Logo" class="school-logo-print">
+                        </div>
                         
-                        <div style="width: 120px; height: 3px; background: linear-gradient(90deg, #22c55e, #10b981); margin: 8px auto; border-radius: 2px;"></div>
-                        
-                        <p class="text-sm text-green-700 font-semibold mt-2">Nursery TO CLASS - IV</p>
-                        <p class="text-xs text-gray-600 mt-1">Madanpur (Play Ground), Madhyamgram, North 24 Parganas, Kolkata - 700128</p>
-                        
-                        <div class="mt-2">
+                        <div class="mt-2 text-center">
                             <span class="bg-green-700 text-white text-xs px-6 py-1.5 rounded-full font-bold tracking-wide inline-block">
                                 ADMISSION FORM
                             </span>
@@ -824,13 +868,16 @@
                 <!-- ============ GUARDIAN COPY ============ -->
                 <div style="border: 2px solid #374151; border-radius: 6px; padding: 8px; background: white;">
                     
-                    <!-- Guardian Copy Header - Compact -->
+                    <!-- Guardian Copy Header - Compact with Logo -->
                     <div style="border-bottom: 1px solid #374151; padding-bottom: 6px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
-                        <div>
-                            <h1 style="font-size: 12px; font-weight: 700; color: #1f2937;">
-                                AL - HUDA ISLAMIC EDUCATIONAL SOCIETY
-                            </h1>
-                            <p style="font-size: 9px; color: #6b7280;">Madanpur, Madhyamgram, Kolkata - 700128</p>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <img src="school-logo.png" alt="Logo" class="school-logo-small">
+                            <div>
+                                <h1 style="font-size: 12px; font-weight: 700; color: #1f2937;">
+                                    AL - HUDA ISLAMIC EDUCATIONAL SOCIETY
+                                </h1>
+                                <p style="font-size: 9px; color: #6b7280;">Madanpur, Madhyamgram, Kolkata - 700128</p>
+                            </div>
                         </div>
                         <div style="text-align: right;">
                             <span style="background: #374151; color: white; font-size: 8px; padding: 3px 10px; border-radius: 10px; font-weight: bold;">GUARDIAN COPY</span>
